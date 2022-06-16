@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-commerce</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+</head>
+<body>
+    
+<div class="title">
+    <div class="btn-menu-car"></div>
+    <div class="ecommerce"> <strong>e-commerce</strong></div>
+    <div class="img-title"><a href="./registro.html"><img src="./images/user.svg"> </a></div>
+
+    <div class="img-title"><img src="./images/heart.svg"></div>
+    <div class="img-title"><label for="btn-menu-car"><img src="./images/shopping-cart.svg"></label>   
+            </div>
+        <input type="checkbox" id="btn-menu-car">
+        <div class="container-menu-car">
+        <div class="cont-menu-car">
+            <section>
+      
+    
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+
+                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                    <table id="lista-carrito" class="table">
+                        <thead>
+
+        <tr>
+            <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+            <th scope="col">
+                <input id="total" name="monto" class="font-weight-bold border-0" readonly style="background-color: red"></input>
+            </th>
+            <!-- <th scope="col"></th> -->
+        </tr>
+
+
+                                
+                                <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                    Compra</a>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <a href="./registro.html"><button href="./registro.html" id="vaciar-carrito" class="btn  btn-primary agregar-carrito">Vaciar Carrito1</button></a>
+                    
+                </div>
+            </li>
+        </ul>
+       
+      
+       
+    </div>
+  
+        
+        
+        
+        
+</section>
+      
+        </div>
+        </div>
+        </div>
+    
+    
+    
+
+
+
+</div>
+</div>
+
+
+
+<section class="contenedor-mayor container-home ">
+                 <h3>Home</h3>
+                                  <form class= "container-search"action="" method="post" target="_blank">
+                                      <p>
+                                      <input type="search" name="busquedaMobile" placeholder="¿Qué producto estas buscando?">
+                                      <input type="submit" value="Buscar">
+                                      </p>
+                                  </form>
+
+                                      <select class="container-model" aria-label="Default select example">
+                                          <option id="categoryItem" category="all"selected>Todos</option> 
+                                         <option  id="categoryItem" category="samsung">Samsung</option>
+                                          <option id="categoryItem" category="motorola">Motorola</option>
+                                          <option id="categoryItem" category="iphone">Iphone</option>
+                                          <option id="categoryItem" category="huawei">Huawei</option>
+                                     
+                                    </select>
+                             
+    </section>
+
+
+<div class="cont-home">
+
+    <nav>
+
+        
+        <!-- precio -->
+     
+     
+     
+     
+        
+              <form>
+                 <div class="multiselect">
+                  <div class="selectBox" onclick="showCheckboxes()">
+                   <select>
+                    <option>Precio</option>
+                   </select>
+                   <div class="overSelect"></div>
+                  </div>
+                  <div id="checkboxes">
+                   <label><input type="checkbox" id="1"/>$2000 a $4000</label>
+                   <label><input type="checkbox" id="2"/>$4000 a $5000</label>
+                   <label><input type="checkbox" id="3"/>$5000 a $6000</label>
+                  </div>
+                 </div>
+                </form> 
+     
+     
+     
+     
+             <!-- categoria -->
+     
+          <form>
+                 <div class="multiselect">
+                  <div class="selectBox" onclick="showCheckboxes2()">
+                   <select>
+                    <option>Categorias</option>
+                   </select>
+                   <div class="overSelect"></div>
+                  </div>
+                  <div id="checkboxes2">
+                     <label><input type="checkbox" id="1"/>Smart SmartTV</label>
+                     <label><input type="checkbox" id="2"/>Computadoras</label>
+                     <label><input type="checkbox" id="3"/>Celulares</label>
+                     <label><input type="checkbox" id="4"/>Tablets</label>
+                     <label><input type="checkbox" id="5"/>Gadgets</label>
+                     <label><input type="checkbox" id="6"/>Audio</label>
+                     <label><input type="checkbox" id="7"/>Gaming</label>
+                  </div>
+                 </div>
+                </form> 
+     <!-- Dispositivo -->
+     <form>
+         <div class="multiselect">
+          <div class="selectBox" onclick="showCheckboxes3()">
+           <select>
+            <option>Dispositivo</option>
+           </select>
+           <div class="overSelect"></div>
+          </div>
+          <div id="checkboxes3">
+             <label><input type="checkbox" id="1"/>Android</label>
+             <label><input type="checkbox" id="2"/>Apple</label>
+          </div>
+         </div>
+        </form> 
+     
+     <!-- Ram -->
+     
+     <form>
+         <div class="multiselect">
+          <div class="selectBox" onclick="showCheckboxes4()">
+           <select>
+            <option>RAM</option>
+           </select>
+           <div class="overSelect"></div>
+          </div>
+          <div id="checkboxes4">
+             <label><input type="checkbox" id="1"/>128 GB</label>
+             <label><input type="checkbox" id="2"/>8 GB</label>
+             <label><input type="checkbox" id="3"/>6 GB</label>
+             <label><input type="checkbox" id="4"/>4 GB</label>
+     
+          </div>
+         </div>
+        </form> 
+     
+                <script>
+                let expanded = false;
+                function showCheckboxes()
+                {
+                 let checkboxes = document.getElementById("checkboxes");
+                 if(!expanded)
+                 {
+                  checkboxes.style.display = "block";
+                  expanded = true;
+                 }
+                 else
+                 {
+                  checkboxes.style.display = "none";
+                  expanded = false;
+                 }
+                } 
+     
+                let expanded2 = false;
+                function showCheckboxes2()
+                {
+                 let checkboxes2 = document.getElementById("checkboxes2");
+                 if(!expanded2)
+                 {
+                  checkboxes2.style.display = "block";
+                  expanded2 = true;
+                 }
+                 else
+                 {
+                  checkboxes2.style.display = "none";
+                  expanded2 = false;
+                 }
+                } 
+                let expanded3 = false;
+                function showCheckboxes3()
+                {
+                 let checkboxes3 = document.getElementById("checkboxes3");
+                 if(!expanded3)
+                 {
+                  checkboxes3.style.display = "block";
+                  expanded3 = true;
+                 }
+                 else
+                 {
+                  checkboxes3.style.display = "none";
+                  expanded3 = false;
+                 }
+                } 
+     
+                let expanded4 = false;
+                function showCheckboxes4()
+                {
+                 let checkboxes4 = document.getElementById("checkboxes4");
+                 if(!expanded4)
+                 {
+                  checkboxes4.style.display = "block";
+                  expanded4 = true;
+                 }
+                 else
+                 {
+                  checkboxes4.style.display = "none";
+                  expanded4= false;
+                 }
+                } 
+                
+                </script>
+     
+     
+         </nav>
+    
+</div>
+
+
+ 
+            
+<!-- /////////......///////////// -->
+
+
+ <!-- ---------------- -->
+   
+
+ <section class ="container-productos">
+
+    <div class="containerTwo" id="lista-productos">
+            
+        <div class="card-deck mb-3 text-center">
+            
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+                <div class="card-body">
+                    <img src="./images/image 1.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Samsung</li>
+                        <h3>Galaxy s52</h3>
+                        <li>Precio</li>
+                        <h2 class="card-title pricing-card-title precio">$ <span class="">5200</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Agregar a Carrito</button>
+                </div>
+            </div>
+
+
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+
+                <div class="card-body">
+                    <img src="./images/image 3.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li> Samsung</li>
+                        <h3>Galaxy A12</h3>
+                        <li>Precio</li>
+                        <h2 class="card-title pricing-card-title precio">$ <span class="">3900</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Agregar a Carrito</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+                <div class="card-body">
+                    <img src="./images/image 4.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Samsung </li>
+                        <h3>Galaxy A32</h3>
+                        <li>Precio</li>
+                       <h2 class="card-title pricing-card-title precio">$ <span class="">7000</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Agregar a Carrito</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-deck mb-3 text-center">
+            
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+                <div class="card-body">
+                    <img src="./images/image 13.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Samsung</li>
+                        <h3>Galaxy A01</h3>
+                        <li>Precio</li>
+                        <h2 class="card-title pricing-card-title precio">$ <span class="">4500</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Agregar a Carrito</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+                <div class="card-body">
+                    <img src="./images/image 14.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Samsung</li>
+                        <h3>Galaxy A70</h3>
+                        <li>Precio</li>
+                        <h2 class="card-title pricing-card-title precio">$ <span class="">5300</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Agregar a Carrito</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+                <div class="card-body">
+                    <img src="./images/image 15.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Samsung</li>
+                        <h3>Galaxy Z FOLD 3</h3>
+                        <li>Precio</li>
+                        <h2 class="card-title pricing-card-title precio">$ <span class="">19800</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Agregar a Carrito</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-deck mb-3 text-center">
+            
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+                <div class="card-body">
+                    <img src="./images/image 16.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Samsung</li>
+                        <h3>Galaxy S21</h3>
+                        <li>Precio</li>
+                        <h2 class="card-title pricing-card-title precio">$ <span class="">16500</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Agregar a Carrito</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+                <div class="card-body">
+                    <img src="./images/image 17.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Samsung</li>
+                        <h3>Galaxy A31</h3>
+                        <li>Precio</li>
+                        <h2 class="card-title pricing-card-title precio">$ <span class="">2100</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Agregar a Carrito</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-bold">SAMSUNG</h4>
+                </div>
+                <div class="card-body">
+                    <img src="./images/image 8.jpg" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Samsung</li>
+                        <h3>Galaxy S52</h3>
+                        <li>Precio</li>
+                        <h2 class="card-title pricing-card-title precio">$ <span class="">5200</span></h2>
+                    </ul>
+                    <button href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Agregar a Carrito</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </section>
+
+
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+ <script src="js/compra.js"></script>
+  
+
+
+
+
+     
+
+</body>
+</html>
