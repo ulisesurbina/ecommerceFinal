@@ -204,25 +204,36 @@ const listaProductos = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 const procesarPedidoBtn = document.getElementById('procesar-pedido');
 const compraCarritoBtn = document.getElementById('compraCarrito');
+const pagarCarritoBtn = document.getElementById('pagar-carrito');
 
 cargarEventos();
 
 function cargarEventos(){
-
+    if (productos != null){
+        productos.addEventListener('click', (e)=>{carro.comprarProducto(e)});
+    }
     //Se ejecuta cuando se presionar agregar carrito
-    productos.addEventListener('click', (e)=>{carro.comprarProducto(e)});
-
+    // productos.addEventListener('click', (e)=>{carro.comprarProducto(e)});
+    if (carrito != null){
+        carrito.addEventListener('click', (e)=>{carro.eliminarProducto(e)});
+    }
     //Cuando se elimina productos del carrito
-    carrito.addEventListener('click', (e)=>{carro.eliminarProducto(e)});
-
+    // carrito.addEventListener('click', (e)=>{carro.eliminarProducto(e)});
+    if (vaciarCarritoBtn != null){
+        vaciarCarritoBtn.addEventListener('click', (e)=>{carro.vaciarCarrito(e)});
+    }
     //Al vaciar carrito
-    vaciarCarritoBtn.addEventListener('click', (e)=>{carro.vaciarCarrito(e)});
-
+    // vaciarCarritoBtn.addEventListener('click', (e)=>{carro.vaciarCarrito(e)});
+    if (pagarCarritoBtn != null){
+        pagarCarritoBtn.addEventListener('click', ()=>{carro.vaciarLocalStorage()});
+    }
     //Al cargar documento se muestra lo almacenado en LS
     document.addEventListener('DOMContentLoaded', carro.leerLocalStorage());
 
     // //Enviar pedido a otra pagina
     // procesarPedidoBtn.addEventListener('click', (e)=>{carro.eliminarProducto(e)});
-
-    compraCarritoBtn.addEventListener('click', (e)=>{carro.compraCarrito(e)});
+    if (compraCarritoBtn != null){
+        compraCarritoBtn.addEventListener('click', (e)=>{carro.vaciarCarrito(e)});
+    }
+    // compraCarritoBtn.addEventListener('click', (e)=>{carro.vaciarCarrito(e)});
 }
